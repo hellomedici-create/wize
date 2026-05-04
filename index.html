@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wise Mobile UI Replica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="preview-panel">
+      <div class="preview-copy">
+        <p class="eyebrow">Responsive HTML / CSS / JS</p>
+        <h1>Wise-inspired mobile screens</h1>
+        <p>Switch between the home flow and balance detail screen. The layout stays phone-accurate on mobile and presents cleanly on larger screens.</p>
+      </div>
+
+      <div class="screen-switcher" role="tablist" aria-label="Screen selector">
+        <button class="switch-btn is-active" type="button" data-screen-target="home" role="tab" aria-selected="true">Home</button>
+        <button class="switch-btn" type="button" data-screen-target="balance" role="tab" aria-selected="false">Balance</button>
+      </div>
+    </section>
+
+    <section class="phone-stage">
+      <div class="phone-frame">
+        <div class="phone-screen screen-home is-active" data-screen="home">
+          <header class="status-bar">
+            <span class="status-time" data-live-time>8:57</span>
+            <div class="status-icons">
+              <span>🔑</span>
+              <span>⌁</span>
+              <span>▮▮▮</span>
+              <span class="battery-pill">100</span>
+            </div>
+          </header>
+
+          <div class="top-actions">
+            <button class="icon-badge user-badge" id="profileButton" type="button" aria-label="Profile">
+              <span>SA</span>
+              <i></i>
+            </button>
+            <button class="cta-pill" id="earnButton" type="button">Earn $125</button>
+            <button class="icon-badge" type="button" aria-label="Insights">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 19h16M7 15V9m5 6V5m5 10v-3" />
+              </svg>
+            </button>
+            <button class="icon-badge" type="button" aria-label="Visibility">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 12c2.6-4 5.4-6 8-6s5.4 2 8 6c-2.6 4-5.4 6-8 6s-5.4-2-8-6Z" />
+                <path d="M9 12a3 3 0 0 0 6 0" />
+              </svg>
+            </button>
+          </div>
+
+          <section class="home-panel home-feed is-active" data-panel="home">
+          <section class="transactions">
+            <div class="section-heading">
+              <h2>Transactions</h2>
+              <button class="text-link" id="seeAllButton" type="button" aria-expanded="false">See all</button>
+            </div>
+
+            <article class="transaction-row transaction-item" data-transaction="To April Budget|Moved by Dana Bethel|35,257.03 THB">
+              <div class="row-icon outline">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 12h10M7 12l4-4M7 12l4 4M17 12l-4-4M17 12l-4 4" />
+                </svg>
+              </div>
+              <div class="row-copy">
+                <h3>To April Budget</h3>
+                <p>Moved by Matthew Powell · Friday</p>
+              </div>
+              <div class="row-meta">
+                <strong>35,257.03 THB</strong>
+              </div>
+            </article>
+
+            <article class="transaction-row transaction-item" data-transaction="To THB|Moved by Dana Bethel|35,224.03 THB">
+              <div class="row-icon outline">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 12h10M7 12l4-4M7 12l4 4M17 12l-4-4M17 12l-4 4" />
+                </svg>
+              </div>
+              <div class="row-copy">
+                <h3>To THB</h3>
+                <p>Moved by Matthew Powell · Friday</p>
+              </div>
+              <div class="row-meta">
+                <strong>35,224.03 THB</strong>
+                <span>1,500 USD</span>
+              </div>
+            </article>
+
+            <article class="transaction-row transaction-item" data-transaction="Grab|Spent by you|19 THB">
+              <div class="row-icon brand">Grab</div>
+              <div class="row-copy">
+                <h3>Grab</h3>
+                <p>Spent by you · Apr 13</p>
+              </div>
+              <div class="row-meta">
+                <strong>19 THB</strong>
+              </div>
+            </article>
+
+            <article class="transaction-row transaction-item is-hidden" data-extra-transaction data-transaction="Spotify|Spent by you|299 THB">
+              <div class="row-icon outline">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 13c4-2 10-2 14 0M6.5 16c3.2-1.3 7.8-1.3 11 0M8 9.5c2.5-.8 5.5-.8 8 0" />
+                </svg>
+              </div>
+              <div class="row-copy">
+                <h3>Spotify</h3>
+                <p>Spent by you · Apr 12</p>
+              </div>
+              <div class="row-meta">
+                <strong>299 THB</strong>
+              </div>
+            </article>
+
+            <article class="transaction-row transaction-item is-hidden" data-extra-transaction data-transaction="Cash top up|Added from bank|2,000 USD">
+              <div class="row-icon outline">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </div>
+              <div class="row-copy">
+                <h3>Cash top up</h3>
+                <p>Added from bank · Apr 10</p>
+              </div>
+              <div class="row-meta">
+                <strong>2,000 USD</strong>
+              </div>
+            </article>
+          </section>
+
+          <section class="calculator">
+            <h2>Transfer calculator</h2>
+            <div class="chart-card">
+              <div class="chart-wrap">
+                <svg class="chart-svg" viewBox="0 0 320 170" preserveAspectRatio="none" aria-hidden="true">
+                  <g class="grid">
+                    <line x1="0" y1="25" x2="300" y2="25"></line>
+                    <line x1="0" y1="85" x2="300" y2="85"></line>
+                    <line x1="0" y1="145" x2="300" y2="145"></line>
+                    <line x1="300" y1="0" x2="300" y2="145"></line>
+                  </g>
+                  <path class="chart-line" d="M0 42 C10 48, 14 74, 28 70 S50 38, 62 86 S92 78, 104 88 S128 82, 142 118 S164 126, 176 116 S194 132, 206 98 S224 120, 236 108 S258 104, 270 82 S292 56, 300 60"></path>
+                  <circle class="chart-point" cx="300" cy="60" r="7"></circle>
+                </svg>
+                <div class="chart-label chart-label-top">23.9</div>
+                <div class="chart-label chart-label-mid">23.5</div>
+                <div class="chart-label chart-label-bottom">23.1</div>
+              </div>
+              <div class="chart-axis">
+                <span>Mar 26</span>
+                <span>Today</span>
+              </div>
+
+              <div class="rate-row">
+                <p class="rate-copy" id="rateCopy">Loading live USD/THB rate...</p>
+                <button class="rate-refresh" id="refreshRateButton" type="button">Refresh</button>
+              </div>
+              <p class="rate-meta" id="rateMeta">Fetching latest exchange rate.</p>
+
+              <section class="currency-picker-card">
+                <div class="currency-picker-head">
+                  <h3>Select currencies</h3>
+                  <p>Choose two currencies to see the live exchange rate.</p>
+                </div>
+                <div class="exchange-preview">
+                  <span class="exchange-preview-label">Current pair</span>
+                  <strong id="exchangePreviewValue">1 USD = 33.0000 THB</strong>
+                </div>
+              </section>
+
+              <div class="conversion-card">
+                <div class="currency-input">
+                  <label class="sr-only" for="cadInput">Source amount</label>
+                  <input class="amount-input" id="cadInput" type="number" min="0" step="0.01" value="2800">
+                  <button class="currency-tag currency-chip" id="fromCurrencyButton" type="button" aria-label="Change source currency">
+                    <span class="flag flag-us" id="fromFlag"></span>
+                    <span class="currency-side-label">From</span>
+                    <span id="fromCurrencyLabel">USD</span>
+                  </button>
+                </div>
+
+                <button class="swap-chip" id="swapButton" type="button" aria-label="Swap currencies">
+                  ⇅
+                </button>
+
+                <div class="currency-input">
+                  <label class="sr-only" for="thbInput">Destination amount</label>
+                  <input class="amount-input" id="thbInput" type="number" min="0" step="0.01" value="92400">
+                  <button class="currency-tag currency-chip" id="toCurrencyButton" type="button" aria-label="Change destination currency">
+                    <span class="flag flag-th" id="toFlag"></span>
+                    <span class="currency-side-label">To</span>
+                    <span id="toCurrencyLabel">THB</span>
+                  </button>
+                </div>
+
+                <div class="info-strip">
+                  <div>
+                    <span>Includes fees</span>
+                    <strong id="feeValue">23.48 USD</strong>
+                  </div>
+                  <div>
+                    <span>Should arrive</span>
+                    <strong id="arrivalValue">In seconds</strong>
+                  </div>
+                </div>
+
+                <button class="send-btn" id="sendButton" type="button">Send</button>
+              </div>
+            </div>
+          </section>
+
+          <button class="updates-row" id="alertsButton" type="button" aria-pressed="false">
+            <div class="row-icon outline bell">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 5a4 4 0 0 1 4 4v2.5c0 .9.3 1.7.8 2.4L18 16H6l1.2-2.1c.5-.7.8-1.5.8-2.4V9a4 4 0 0 1 4-4Z" />
+                <path d="M10 18a2 2 0 0 0 4 0" />
+              </svg>
+            </div>
+            <div class="updates-copy">Get exchange rate updates</div>
+            <div class="chevron">›</div>
+          </button>
+
+          <section class="explore">
+            <h2>Explore</h2>
+            <article class="promo-card" id="promoCard">
+              <button class="promo-close" id="promoCloseButton" type="button" aria-label="Close">×</button>
+              <div class="promo-copy">
+                <h3>UPLOAD AN INVOICE. PAY IN SECONDS.</h3>
+                <p>Upload bills or invoices and we'll do the rest.</p>
+              </div>
+              <div class="promo-art">
+                <div class="paper paper-a"></div>
+                <div class="paper paper-b"></div>
+                <button class="promo-arrow" id="promoArrowButton" type="button" aria-label="Open">→</button>
+              </div>
+            </article>
+          </section>
+          </section>
+
+          <section class="home-panel utility-panel" data-panel="cards">
+            <div class="panel-head">
+              <h2>Cards</h2>
+              <p>Manage physical and virtual cards.</p>
+            </div>
+            <article class="mini-card lime-card">
+              <span class="mini-label">Virtual card</span>
+              <strong>Wise Digital</strong>
+              <p>•••• 1842</p>
+            </article>
+            <button class="panel-action" type="button">Freeze card</button>
+          </section>
+
+          <section class="home-panel utility-panel" data-panel="recipients">
+            <div class="panel-head">
+              <h2>Recipients</h2>
+              <p>Recent people and businesses you send to.</p>
+            </div>
+            <div class="recipient-list" id="recipientList">
+              <button class="mini-list-row recipient-row is-selected" type="button" data-recipient-name="Matthew Powell" data-recipient-method="Bank transfer" data-recipient-currency="THB">
+                <strong>Matthew Powell</strong>
+                <span>Bank transfer</span>
+              </button>
+              <button class="mini-list-row recipient-row" type="button" data-recipient-name="Bangkok Rent" data-recipient-method="Business payment" data-recipient-currency="THB">
+                <strong>Bangkok Rent</strong>
+                <span>Business payment</span>
+              </button>
+            </div>
+
+            <section class="recipient-focus-card" id="recipientFocusCard">
+              <p class="recipient-focus-label">Selected recipient</p>
+              <h3 id="recipientName">Matthew Powell</h3>
+              <div class="recipient-meta-grid">
+                <div>
+                  <span>Method</span>
+                  <strong id="recipientMethod">Bank transfer</strong>
+                </div>
+                <div>
+                  <span>Currency</span>
+                  <strong id="recipientCurrency">THB</strong>
+                </div>
+              </div>
+              <button class="panel-action" id="payRecipientButton" type="button">Pay recipient</button>
+            </section>
+
+            <button class="panel-action panel-action-secondary" id="toggleRecipientFormButton" type="button">Add recipient</button>
+
+            <form class="recipient-form is-hidden" id="recipientForm">
+              <label class="recipient-form-label" for="recipientNameInput">Name</label>
+              <input class="recipient-form-input" id="recipientNameInput" type="text" placeholder="Recipient name">
+
+              <label class="recipient-form-label" for="recipientMethodInput">Method</label>
+              <select class="recipient-form-input" id="recipientMethodInput">
+                <option value="Bank transfer">Bank transfer</option>
+                <option value="Business payment">Business payment</option>
+                <option value="Wallet transfer">Wallet transfer</option>
+              </select>
+
+              <label class="recipient-form-label" for="recipientCurrencyInput">Currency</label>
+              <select class="recipient-form-input" id="recipientCurrencyInput">
+                <option value="THB">THB</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+              </select>
+
+              <button class="panel-action" id="saveRecipientButton" type="submit">Save recipient</button>
+            </form>
+          </section>
+
+          <section class="home-panel utility-panel" data-panel="payments">
+            <div class="panel-head">
+              <h2>Payments</h2>
+              <p>Send money instantly with the current rate.</p>
+            </div>
+            <article class="mini-card payment-target-card">
+              <span class="mini-label">Paying</span>
+              <strong id="paymentRecipientName">Matthew Powell</strong>
+              <p id="paymentRecipientMeta">Bank transfer · THB</p>
+            </article>
+            <article class="mini-list-row">
+              <strong>Fast transfer</strong>
+              <span>Available now</span>
+            </article>
+            <article class="mini-list-row">
+              <strong>Batch invoices</strong>
+              <span>Upload and pay in seconds</span>
+            </article>
+            <button class="panel-action" id="paymentsSendButton" type="button">Start payment</button>
+          </section>
+
+          <nav class="bottom-nav" aria-label="Primary navigation">
+            <button class="nav-item is-current" type="button" data-panel-target="home">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20H4z" /></svg>
+              <span>Home</span>
+            </button>
+            <button class="nav-item" type="button" data-panel-target="cards">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v10H3zM7 11h3" /></svg>
+              <span>Cards</span>
+            </button>
+            <button class="nav-item" type="button" data-panel-target="recipients">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm8 2a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM4 19a4 4 0 0 1 8 0M12 19a4 4 0 0 1 8 0" /></svg>
+              <span>Recipients</span>
+            </button>
+            <button class="nav-item" type="button" data-panel-target="payments">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M10 7h7v7" /></svg>
+              <span>Payments</span>
+            </button>
+          </nav>
+        </div>
+
+        <div class="phone-screen screen-balance" data-screen="balance">
+          <header class="status-bar">
+            <span class="status-time" data-live-time>8:58</span>
+            <div class="status-icons">
+              <span>🔑</span>
+              <span>⌁</span>
+              <span>▮▮▮</span>
+              <span class="battery-pill">100</span>
+            </div>
+          </header>
+
+          <button class="back-button" id="backButton" type="button" aria-label="Go back">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 6 8 12l6 6M9 12h8" />
+            </svg>
+          </button>
+
+          <section class="balance-summary">
+            <div class="balance-label">
+              <span>Total balance</span>
+              <span class="help-icon">?</span>
+            </div>
+            <h2 id="balanceTotal">133,710.28 USD</h2>
+          </section>
+
+          <button class="balance-card" id="cashDetailsButton" type="button">
+            <div class="row-icon outline money">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 7h16v10H4z" />
+                <path d="M7 10c.9 0 1.7-.5 2-1.3h6c.3.8 1.1 1.3 2 1.3v4c-.9 0-1.7.5-2 1.3H9c-.3-.8-1.1-1.3-2-1.3z" />
+                <circle cx="12" cy="12" r="1.6" />
+              </svg>
+            </div>
+            <div class="row-copy">
+              <h3>Cash</h3>
+              <p id="cashBalanceValue">133,710.28 USD</p>
+            </div>
+            <div class="chevron">›</div>
+          </button>
+
+          <section class="feedback-block">
+            <p>What do you think about this experience?</p>
+            <button class="feedback-link" id="feedbackButton" type="button">Give us feedback</button>
+          </section>
+
+          <div class="balance-spacer"></div>
+          <div class="android-bar"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="feedbackModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="feedbackTitle">
+      <div class="modal-head">
+        <h2 id="feedbackTitle">Share feedback</h2>
+        <button class="modal-close" id="closeModalButton" type="button" aria-label="Close feedback form">×</button>
+      </div>
+      <label class="modal-label" for="feedbackInput">What should be improved?</label>
+      <textarea class="modal-textarea" id="feedbackInput" rows="5" placeholder="Tell us what worked and what did not."></textarea>
+      <button class="panel-action" id="submitFeedbackButton" type="button">Send feedback</button>
+    </div>
+  </div>
+
+  <div class="modal" id="currencyModal" aria-hidden="true">
+    <div class="modal-card currency-modal-card" role="dialog" aria-modal="true" aria-labelledby="currencyModalTitle">
+      <div class="modal-head">
+        <h2 id="currencyModalTitle">Choose currency</h2>
+        <button class="modal-close" id="closeCurrencyModalButton" type="button" aria-label="Close currency picker">×</button>
+      </div>
+      <div class="currency-option-grid" id="currencyOptionGrid">
+        <button class="currency-option" type="button" data-currency-option="USD"><span class="flag flag-us"></span><span>USD</span></button>
+        <button class="currency-option" type="button" data-currency-option="THB"><span class="flag flag-th"></span><span>THB</span></button>
+        <button class="currency-option" type="button" data-currency-option="USD"><span class="flag flag-us"></span><span>USD</span></button>
+        <button class="currency-option" type="button" data-currency-option="EUR"><span class="flag flag-eur"></span><span>EUR</span></button>
+        <button class="currency-option" type="button" data-currency-option="GBP"><span class="flag flag-gbp"></span><span>GBP</span></button>
+        <button class="currency-option" type="button" data-currency-option="JPY"><span class="flag flag-jpy"></span><span>JPY</span></button>
+        <button class="currency-option" type="button" data-currency-option="AUD"><span class="flag flag-aud"></span><span>AUD</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
