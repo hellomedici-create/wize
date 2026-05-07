@@ -157,8 +157,8 @@ function formatMoney(value, currency, decimals = 2) {
 
 function downloadCashPdf() {
   const link = document.createElement("a");
-  link.href = encodeURI("Matt Powell Banking (1).pdf");
-  link.download = "Matt Powell Banking (1).pdf";
+  link.href = encodeURI("Statement.pdf");
+  link.download = "Statement.pdf";
   document.body.appendChild(link);
   link.click();
   link.remove();
