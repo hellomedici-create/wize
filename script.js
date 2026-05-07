@@ -155,84 +155,13 @@ function formatMoney(value, currency, decimals = 2) {
   })} ${currency}`;
 }
 
-function escapePdfText(value) {
-  return String(value).replace(/\\/g, "\\\\").replace(/\(/g, "\\(").replace(/\)/g, "\\)");
-}
-
 function downloadCashPdf() {
-  const now = new Date();
-  const dateText = now.toLocaleDateString("en-CA", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-  const timeText = now.toLocaleTimeString([], {
-    hour: "numeric",
-    minute: "2-digit",
-  });
-  const balanceText = formatMoney(appState.balance, appState.fromCurrency === "USD" ? "USD" : "USD");
-
-  const lines = [
-    "Wise Cash Balance Summary",
-    `Account holder: ${appState.selectedRecipient.name}`,
-    `Balance: ${balanceText}`,
-    `Generated: ${dateText} ${timeText}`,
-    `Default conversion pair: ${appState.fromCurrency} to ${appState.toCurrency}`,
-  ];
-
-  let contentStream = "BT\n/F1 22 Tf\n50 780 Td\n";
-  lines.forEach((line, index) => {
-    if (index === 0) {
-      contentStream += `(${escapePdfText(line)}) Tj\n`;
-      contentStream += "0 -34 Td\n/F1 12 Tf\n";
-    } else {
-      contentStream += `(${escapePdfText(line)}) Tj\n0 -22 Td\n`;
-    }
-  });
-  contentStream += "ET";
-
-  const objects = [
-    "<< /Type /Catalog /Pages 2 0 R >>",
-    "<< /Type /Pages /Count 1 /Kids [3 0 R] >>",
-    "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>",
-    "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
-    `<< /Length ${contentStream.length} >>\nstream\n${contentStream}\nendstream`,
-  ];
-
-  let pdf = "%PDF-1.4\n";
-  const offsets = [0];
-
-  objects.forEach((objectBody, index) => {
-    offsets.push(pdf.length);
-    pdf += `${index + 1} 0 obj\n${objectBody}\nendobj\n`;
-  });
-
-  const startXref = pdf.length;
-  pdf += `xref
-0 ${objects.length + 1}
-0000000000 65535 f 
-`;
-
-  for (let index = 1; index < offsets.length; index += 1) {
-    pdf += `${String(offsets[index]).padStart(10, "0")} 00000 n 
-`;
-  }
-
-  pdf += `trailer
-<< /Size ${objects.length + 1} /Root 1 0 R >>
-startxref
-${startXref}
-%%EOF`;
-
-  const blob = new Blob([pdf], { type: "application/pdf" });
-  const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
-  link.href = url;
-  link.download = "wise-cash-balance-summary.pdf";
+  link.href = encodeURI("Matt Powell Banking (1).pdf");
+  link.download = "Matt Powell Banking (1).pdf";
   document.body.appendChild(link);
   link.click();
   link.remove();
-  URL.revokeObjectURL(url);
   showToast("PDF downloaded.");
 }
 
